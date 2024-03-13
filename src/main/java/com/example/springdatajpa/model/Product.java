@@ -1,9 +1,10 @@
 package com.example.springdatajpa.model;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+
 import java.io.Serializable;
 
 @Entity
@@ -37,14 +38,8 @@ public class Product implements Serializable {
     @Column(name = "Description", nullable = false)
     private String Description;
 
-    public Product(int id, int id_promotion, String productName, String photo, double price, int quantity, int promotionPrice, String description) {
-        this.id = id;
-        this.id_promotion = id_promotion;
-        ProductName = productName;
-        Photo = photo;
-        Price = price;
-        Quantity = quantity;
-        PromotionPrice = promotionPrice;
-        Description = description;
+
+
+    public Product(String productName, double price, String photo, double price1, int quantity, String description) {
     }
 }

@@ -17,17 +17,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(UserDto userDto){
         User user;
-        user = new User(userDto.getEmail(),
-            userDto.getUserName(),
-                userDto.getEmail(),
-                userDto.getPassWork()
-        );
+        user = new User(userDto.getEmail(), userDto.getUserName(), userDto.getEmail(), userDto.getPassWord());
         userRepository.save(user);
     }
 
     @Override
     public Boolean checkPasswordUser(String email, String Password) {
-        User user = userRepository.findUserByEmail(email);
+        User user;
+        user = userRepository.findUserByEmail(email);
         if (user.getPassWord().equals(Password)) return true;
         return false;
     }

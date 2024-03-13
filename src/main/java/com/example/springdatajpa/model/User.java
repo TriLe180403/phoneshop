@@ -2,11 +2,14 @@ package com.example.springdatajpa.model;
 
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 
 public class User implements Serializable {
     @Id
@@ -72,5 +75,9 @@ public class User implements Serializable {
 
     public void setPassWord(String passWord) {
         PassWord = passWord;
+    }
+
+    public Set<Role> getRole() {
+        return null;
     }
 }

@@ -13,6 +13,23 @@ public class ProductServiceImpl implements ProductService{
     private ProductRepository productRepository;
     @Override
     public void save(ProductDto productDto, User user){
-        Product product = new Product(ProductDto.getTitle())
+        Product product = new Product(productDto.getProductName(), productDto.getPrice(),
+                productDto.getPhoto(), productDto.getPrice(), productDto.getQuantity(), productDto.getDescription());
+    }
+
+
+    @Override
+    public Product findProductById(Integer id) {
+        return productRepository.findProductById(id);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        productRepository.deleteById(id);
+    }
+
+    @Override
+    public void update(Product product) {
+        productRepository.save(product);
     }
 }

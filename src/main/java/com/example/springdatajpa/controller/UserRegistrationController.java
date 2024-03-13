@@ -27,9 +27,7 @@ public class UserRegistrationController {
         if(userService.checkUserbyEmail(userDto.getEmail())){
             return "redirect:/registration?emailexist";
         }
-        if(userDto.getPassWork().equals(userDto.getPassWork())==false){
-            return "redirect:/registration?checkpass";
-        }
+
         userService.save(userDto);
         return "redirect:/registration?success";
     }

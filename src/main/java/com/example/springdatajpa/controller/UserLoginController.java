@@ -34,7 +34,7 @@ public class UserLoginController {
         if (userService.checkUserbyEmail(userDto.getEmail()) == false){
             return "redirect:/login?emailwrong";
         }
-        if (userService.checkPasswordUser(userDto.getEmail(), userDto.getPassWork())){
+        if (userService.checkPasswordUser(userDto.getEmail(), userDto.getPassWord())){
             return "redirect:/home?success";
         }
         return "redirect:/login?passwordwrong";
